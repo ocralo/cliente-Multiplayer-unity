@@ -10,7 +10,7 @@ public class conecSocketio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var serverUrl = "http://localhost:7001";
+        var serverUrl = "http://169.254.128.157:7001";
         var socket = Socket.Connect(serverUrl);
 
         // receive "news" event
