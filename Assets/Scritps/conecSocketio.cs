@@ -10,7 +10,7 @@ public class conecSocketio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var serverUrl = "http://169.254.128.157:7001";
+        var serverUrl = "http://localhost:7001";
         var socket = Socket.Connect(serverUrl);
 
         // receive "news" event
@@ -18,9 +18,10 @@ public class conecSocketio : MonoBehaviour
         {
             Debug.Log(data);
             text.GetComponent<Text>().text = data;
-
+            /* 
             // Emit raw string data
             socket.Emit("my other event", "{ my: data }");
+            */
 
             // Emit json-formatted string data
             socket.EmitJson("my other event", @"{ ""my"": ""data"" }");
